@@ -15,7 +15,6 @@
     <ItemGroup>
         <Folder Include="client\src\components\"/>
         <Folder Include="client\src\pages\"/>
-        <Folder Include="client\src\routes\" />
         <Folder Include="client\src\services\"/>
         <Folder Include="client\src\stores\"/>
     </ItemGroup>
