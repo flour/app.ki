@@ -1,0 +1,38 @@
+{
+  "name": "appki-client",
+  "private": true,
+  "description": "AppKi web-app",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "eslint src --fix"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^8.0.0",
+    "bignumber.js": "^9.1.2",
+    "effector": "^23.0.0",
+    "effector-react": "^23.0.1",
+    "effector-storage": "^7.0.0",
+    "moment": "^2.29.4",
+    "patronum": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.1.0",
+    "rollup": "^4.6.1",
+    "sass": "^1.69.5",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.5"
+  }
+}
