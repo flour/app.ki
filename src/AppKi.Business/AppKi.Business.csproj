@@ -11,6 +11,7 @@
 
     <ItemGroup>
       <PackageReference Include="Io.Gate.GateApi" Version="4.60.1" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     </ItemGroup>
 
 </Project>

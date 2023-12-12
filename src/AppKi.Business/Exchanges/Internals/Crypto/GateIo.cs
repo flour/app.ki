@@ -21,9 +21,8 @@ internal class GateIo : ICryptoExchange
 
     public async Task<ResultList<Pair>> GetPairs()
     {
-        var _ = await _spot.ListCurrencyPairsAsync();
-
-        return ResultList<Pair>.Ok(new List<Pair>());
+        var result = await _spot.ListCurrencyPairsAsync();
+        return ResultList<Pair>.Ok(result.Select(e => new Pair(e.Base, e.Quote)));
     }
 
     public async Task<ResultList<Ohlcv>> GetSpotHistory(
