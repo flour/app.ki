@@ -9,4 +9,8 @@
       <ProjectReference Include="..\libs\AppKi.Commons\AppKi.Commons.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Io.Gate.GateApi" Version="4.60.1" />
+    </ItemGroup>
+
 </Project>

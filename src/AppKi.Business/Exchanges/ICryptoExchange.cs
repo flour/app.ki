@@ -5,5 +5,6 @@ namespace AppKi.Business.Exchanges;
 
 public interface ICryptoExchange
 {
+    Task<ResultList<Pair>> GetPairs();
     Task<ResultList<Ohlcv>> GetSpotHistory(DateTime from, DateTime to, string @base, string quoted);
 }
