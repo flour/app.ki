@@ -1,19 +1,12 @@
 ﻿namespace AppKi.Business.Exchanges.Internals;
 
-internal class ExchangeFactory : IExchangeFactory
+internal class ExchangeFactory(Func<string, ICryptoExchange> cryptoExchangeGetter) : IExchangeFactory
 {
-    private readonly Func<string, ICryptoExchange> _cryptoExchangeGetter;
+    internal static readonly Dictionary<string, Type> CryptoExchanges = new();
 
-    public ExchangeFactory(
-        Func<string, ICryptoExchange> cryptoExchangeGetter)
-    {
-        _cryptoExchangeGetter = cryptoExchangeGetter;
-    }
-
-    public ICryptoExchange GetCrypto(string name) => _cryptoExchangeGetter(name);
+    public ICryptoExchange GetCrypto(string name) 
+        => cryptoExchangeGetter(name);
 
     public List<ICryptoExchange> GetAllCrypto()
-    {
-        throw new NotImplementedException();
-    }
+        => CryptoExchanges.Keys.Select(cryptoExchangeGetter).ToList();
 }

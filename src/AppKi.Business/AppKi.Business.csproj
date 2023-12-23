@@ -6,7 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\libs\AppKi.Commons\AppKi.Commons.csproj" />
+      <PackageReference Include="Quartz.Extensions.Hosting" Version="3.8.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AppKi.DataAccess\AppKi.DataAccess.csproj" />
     </ItemGroup>
 
 </Project>

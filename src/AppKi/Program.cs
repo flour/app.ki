@@ -1,11 +1,12 @@
+using AppKi.Business;
 using Flour.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseLogging();
 
-
 builder.Services
     .AddControllers().Services
+    .AddBusiness(builder.Configuration)
     .AddSpaStaticFiles(e => e.RootPath = "dist");
 
 builder.Services.AddEndpointsApiExplorer();
@@ -13,7 +14,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

@@ -1,5 +1,12 @@
-﻿namespace AppKi.DataAccess;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-public class DataAccessInjections
+namespace AppKi.DataAccess;
+
+public static class DataAccessInjections
 {
+    public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
+    {
+        return services;
+    }
 }
