@@ -1,8 +1,15 @@
 using AppKi.Business;
 using Flour.Logging;
+using Wolverine;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseLogging();
+builder.Host
+    .UseLogging()
+    .UseWolverine(opts =>
+    {
+        opts.ApplicationAssembly = typeof(BusinessInjections).Assembly;
+        opts.MessageSuccessLogLevel(LogLevel.Debug);
+    });
 
 builder.Services
     .AddControllers().Services

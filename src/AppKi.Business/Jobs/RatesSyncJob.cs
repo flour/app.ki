@@ -1,17 +1,21 @@
-﻿using Quartz;
+﻿using AppKi.Business.Messaging.Events;
+using Quartz;
+using Wolverine;
 
 namespace AppKi.Business.Jobs;
 
 [DisallowConcurrentExecution]
 internal class RatesSyncJob : IJob
 {
-    public RatesSyncJob()
+    private readonly IMessageBus _messageBus;
+
+    public RatesSyncJob(IMessageBus messageBus)
     {
-        
+        _messageBus = messageBus;
     }
     
-    public async Task Execute(IJobExecutionContext context)
+    public Task Execute(IJobExecutionContext context)
     {
-        await Task.Yield();
+        return _messageBus.PublishAsync(new TestMessage()).AsTask();
     }
 }
