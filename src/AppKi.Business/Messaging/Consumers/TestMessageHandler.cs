@@ -4,7 +4,7 @@ namespace AppKi.Business.Messaging.Consumers;
 
 public class TestMessageHandler : IEventConsumer
 {
-    public async Task Handle(TestMessage anEvent)
+    public async Task Handle(TickerRatesEvent anEvent)
     {
         await Task.Yield();
     }
@@ -12,7 +12,7 @@ public class TestMessageHandler : IEventConsumer
 
 public class TestMessageOtherHandler : IEventConsumer
 {
-    public async Task Handle(TestMessage anEvent)
+    public async Task Handle(TickerRatesEvent anEvent)
     {
         await Task.Yield();
     }

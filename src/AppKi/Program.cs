@@ -5,11 +5,7 @@ using Wolverine;
 var builder = WebApplication.CreateBuilder(args);
 builder.Host
     .UseLogging()
-    .UseWolverine(opts =>
-    {
-        opts.ApplicationAssembly = typeof(BusinessInjections).Assembly;
-        opts.MessageSuccessLogLevel(LogLevel.Debug);
-    });
+    .UseWolverine(opts => opts.ApplicationAssembly = typeof(BusinessInjections).Assembly);
 
 builder.Services
     .AddControllers().Services
