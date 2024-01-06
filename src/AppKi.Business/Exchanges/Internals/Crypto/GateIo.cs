@@ -15,6 +15,8 @@ internal class GateIo(IOptions<GateIoSettings> options) : ICryptoExchange
         ApiV4Secret = options.Value.ApiSecret
     });
 
+    public string Name => nameof(GateIo);
+
     public async Task<ResultList<TickerRate>> GetTickers()
     {
         var rates = await _client.ListTickersAsync();
@@ -32,8 +34,7 @@ internal class GateIo(IOptions<GateIoSettings> options) : ICryptoExchange
                     pair[0],
                     pair[1],
                     double.Parse(string.IsNullOrWhiteSpace(e.HighestBid) ? e.Last : e.HighestBid),
-                    double.Parse(string.IsNullOrWhiteSpace(e.LowestAsk) ? e.Last : e.LowestAsk),
-                    nameof(GateIo));
+                    double.Parse(string.IsNullOrWhiteSpace(e.LowestAsk) ? e.Last : e.LowestAsk));
             }).Where(e => e != null));
     }
 
